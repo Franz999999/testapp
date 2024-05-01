@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.basic.BasicSliderUI;
@@ -31,7 +32,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private static final String EMAIL_FROM = "helperbot999999999@gmail.com";
     private static final String EMAIL_TO = "franzilator9@gmail.com";
     private static final String APP_PASSWORD = "cipb xbfj oson iixh";
-    boolean dark = false;
+    boolean dark = true;
 
     public EnrollmentApp() {
         initComponents();
@@ -194,6 +195,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        UIManager.put("Button.arc", 999);
+        UIManager.put( "Component.arc", 999 );
+        UIManager.put( "CheckBox.arc", 999 );
+        UIManager.put( "ProgressBar.arc", 999 );
         FlatDarkLaf.setup();
         
         java.awt.EventQueue.invokeLater(() -> {
