@@ -7,37 +7,38 @@ import jakarta.mail.Store;
 import java.util.Properties;
 
 import com.sun.mail.imap.*;
+import jakarta.mail.BodyPart;
+import jakarta.mail.Multipart;
 
 public class ReadMail {
 
     static void getProps(String user, String pass) {
         try {
             Properties prop = new Properties();
+            prop.put("mail.pop3.host", "pop.gmail.com");
+            prop.put("mail.pop3.port", "995");
+            prop.put("mail.pop3.starttls.enable", "true");
 
             Session sesh = Session.getDefaultInstance(prop); 
             
-            Store store = sesh.getStore("imap");
+            Store store = sesh.getStore("pop3s");
             
-            store.connect("pop.gmail.com", user, pass);
+            store.connect("pop.gmail.com", "helperbot999999999@gmail.com", "cipb xbfj oson iixh");
             
             Folder folder = store.getFolder("INBOX");
             folder.open(Folder.READ_ONLY);
             
-            Message[] messages = folder.getMessages();
-            System.out.println("message_length: " + messages.length);
+            Message msgs[] = folder.getMessages();
             
-            for (int i = 0, n = messages.length; i < n; i++) {
-                System.out.println("sd");
-                Message message = messages[i];
-                System.out.println("Email Number: " + (i+1));
-                System.out.println("Subject: " + message.getSubject());
-                System.out.println("From: " + message.getFrom()[0]);
-                System.out.println("Subject: " + message.getContent());
-            }
+            int i = ((msgs.length) - 1);
             
-            folder.close(false);
-            store.close();
+            Message msg = msgs[i];
             
+            System.out.println("Subject: " + msg.getSubject());
+            Multipart multipart = (Multipart) msgs[i].getContent();
+            BodyPart part = multipart.getBodyPart(0);
+            part.toString();
+            System.out.println("Message: \n" + part.getContent().toString());
         } catch (Exception e) {
 
         }
