@@ -75,6 +75,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         str = new javax.swing.JLabel();
         clock = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -121,8 +122,8 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(250, 50));
         jLabel1.setMinimumSize(new java.awt.Dimension(250, 50));
         jLabel1.setPreferredSize(new java.awt.Dimension(250, 50));
-        Test.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
-        Test.add(field, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 250, -1));
+        Test.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 170, -1));
+        Test.add(field, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 170, -1));
 
         str.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         str.setText(" ");
@@ -138,6 +139,9 @@ public class EnrollmentApp extends javax.swing.JFrame {
             }
         });
         Test.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Test.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, -1, -1));
 
         getContentPane().add(Test, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 280));
 
@@ -213,6 +217,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private javax.swing.JTextField field;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
