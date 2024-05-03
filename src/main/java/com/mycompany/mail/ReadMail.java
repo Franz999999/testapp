@@ -40,7 +40,7 @@ public class ReadMail {
             part.toString();
             System.out.println("Message: \n" + part.getContent().toString());
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 }

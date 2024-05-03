@@ -26,9 +26,9 @@ public class Utilities {
         
         Image img = Toolkit.getDefaultToolkit().getImage("icon.png");
         TrayIcon icon = new TrayIcon(img, "tray");
-        
+
         icon.setImageAutoSize(true);
-        icon.setToolTip("System tray icon demo");
+        icon.setToolTip(null);
         tray.add(icon);
         icon.displayMessage("Enrollment Update", "Your enrollment is being reviewed", MessageType.INFO);
     }

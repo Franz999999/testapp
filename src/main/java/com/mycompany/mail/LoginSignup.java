@@ -41,11 +41,11 @@ public class LoginSignup {
     
     static ImageIcon Captcha() {
         Captcha captcha = new Captcha();
-        captcha.getConfig().setNoise(2);
+        captcha.getConfig().setNoise(0);
         captcha.getConfig().setDark(true);
         captcha.getConfig().setDarkBackgroundColor(Color.DARK_GRAY);
         captcha.getConfig().setWidth(200);
-        captcha.getConfig().setHeight(50);
+        captcha.getConfig().setHeight(40);
         GeneratedCaptcha gencaptcha = captcha.generate();
         BufferedImage capImg = gencaptcha.getImage();
         ImageIcon imgicon = new ImageIcon(capImg);
