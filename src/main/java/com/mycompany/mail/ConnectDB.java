@@ -23,19 +23,18 @@ public class ConnectDB {
             Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             ResultSet rs = statement.executeQuery("select * from accounts");
-
+            
             while (rs.next()) {
-                System.out.println(rs.getString(1) + rs.getString(2) + rs.getString(3) + rs.getString(4));
+                System.out.println(rs.getString(2));
             }
-
-            System.out.println("");
+            
+            rs.last();
             
             AddAcc(connection, statement, rs);
-            
-            connection.close();
+                    
+            System.out.println(rs.getString(2));
 
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -43,19 +42,18 @@ public class ConnectDB {
         try {
             //INSERT INTO `accounts` (`USER_ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PHONE_NUMBER`, `PASSWORD`, `BIRTHDATE`) VALUES ('6', 'e', 'e', 'ee', 'ee', 'ee', 'eee');
             rs.moveToInsertRow();
-            rs.updateString(1, "7");
-            rs.updateString(2, "7");
-            rs.updateString(3, "7");
-            rs.updateString(4, "7");
-            rs.updateString(5, "7");
-            rs.updateString(6, "7");
-            rs.updateString(7, "7");
+            rs.updateString(1, "9");
+            rs.updateString(2, "9");
+            rs.updateString(3, "9");
+            rs.updateString(4, "9");
+            rs.updateString(5, "9");
+            rs.updateString(6, "9");
+            rs.updateString(7, "9");
             rs.insertRow();
             
             System.out.println("Inserted");
             
         } catch (Exception e) {
-            e.printStackTrace();
         }
 
     }
