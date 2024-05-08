@@ -4,6 +4,9 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
+import com.formdev.flatlaf.util.Animator;
+import com.formdev.flatlaf.util.Animator.Interpolator;
+import com.formdev.flatlaf.util.Animator.TimingTarget;
 import com.formdev.flatlaf.util.ScaledImageIcon;
 import java.awt.AWTException;
 import java.awt.Color;
@@ -28,6 +31,7 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -51,20 +55,20 @@ public class EnrollmentApp extends javax.swing.JFrame {
     public static String code;
 
     public EnrollmentApp() {
-        initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        initComponents();
+        ScaleImg(logos);
         Test.setVisible(false);
         jLabel1.setIcon(LoginSignup.Captcha());
         jFileChooser1.setVisible(false);
-        ScaleImg();
         ClockStart();
         PassStrength();
     }
-    
-    void ScaleImg() {
-        ImageIcon ic = new ImageIcon("C:\\Users\\MY PC\\Documents\\NetBeansProjects\\mail\\src\\main\\resources\\a.png");
+
+    void ScaleImg(JLabel label) {
+        ImageIcon ic = (ImageIcon) label.getIcon();
         Image scaled = ic.getImage().getScaledInstance(logos.getWidth(), logos.getHeight(), Image.SCALE_SMOOTH);
-        logos.setIcon(new ImageIcon(scaled));
+        label.setIcon(new ImageIcon(scaled));
     }
 
     void LoadFont() {
@@ -76,15 +80,14 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
             graenv.registerFont(font);
             emlabel.setFont(font);
-            jLabel2.setFont(font);
-
+            
         } catch (MalformedURLException ex) {
             Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FontFormatException ex) {
             Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
 
     }
 
@@ -119,6 +122,18 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
         Login = new javax.swing.JPanel();
         Filter2 = new javax.swing.JPanel();
+        side = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        logos = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        bg = new javax.swing.JLabel();
         Filter = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         fielddecor = new javax.swing.JPanel();
@@ -136,17 +151,6 @@ public class EnrollmentApp extends javax.swing.JFrame {
         fielddecor4 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        logos = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        bg = new javax.swing.JLabel();
         Test = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -170,9 +174,9 @@ public class EnrollmentApp extends javax.swing.JFrame {
         login1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UIC EduGate");
         setMaximumSize(new java.awt.Dimension(1536, 864));
         setMinimumSize(new java.awt.Dimension(1536, 864));
-        setResizable(false);
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
             }
@@ -197,8 +201,111 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Login.setPreferredSize(new java.awt.Dimension(1538, 866));
         Login.setLayout(null);
 
-        Filter2.setBackground(new java.awt.Color(253, 193, 200));
+        Filter2.setBackground(new java.awt.Color(255, 255, 255));
         Filter2.setLayout(null);
+
+        side.setLayout(null);
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("Excellence");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        side.add(jLabel6);
+        jLabel6.setBounds(60, 680, 240, 50);
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Conception");
+        jLabel7.setToolTipText("");
+        side.add(jLabel7);
+        jLabel7.setBounds(170, 110, 250, 40);
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("Legacy");
+        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        side.add(jLabel9);
+        jLabel9.setBounds(60, 530, 280, 60);
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel10.setText("of");
+        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        side.add(jLabel10);
+        jLabel10.setBounds(60, 580, 240, 50);
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel11.setText("Pioneering");
+        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        side.add(jLabel11);
+        jLabel11.setBounds(60, 630, 240, 50);
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("A");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        side.add(jLabel12);
+        jLabel12.setBounds(60, 480, 50, 50);
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel13.setText("University of the");
+        jLabel13.setToolTipText("");
+        side.add(jLabel13);
+        jLabel13.setBounds(170, 50, 250, 40);
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("mmaculate");
+        jLabel14.setToolTipText("");
+        side.add(jLabel14);
+        jLabel14.setBounds(196, 80, 190, 40);
+
+        logos.setForeground(new java.awt.Color(255, 255, 255));
+        logos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a.png"))); // NOI18N
+        logos.setText("Logo");
+        logos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logos.setMaximumSize(new java.awt.Dimension(90, 90));
+        logos.setMinimumSize(new java.awt.Dimension(90, 90));
+        logos.setPreferredSize(new java.awt.Dimension(90, 90));
+        side.add(logos);
+        logos.setBounds(60, 50, 100, 90);
+
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel16.setText("I");
+        jLabel16.setToolTipText("");
+        side.add(jLabel16);
+        jLabel16.setBounds(178, 80, 20, 40);
+
+        bg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vecteezy_beautiful-pink-color-gradient-background_7383249.jpg"))); // NOI18N
+        bg.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        side.add(bg);
+        bg.setBounds(0, 0, 480, 870);
+
+        Filter2.add(side);
+        side.setBounds(0, 0, 480, 870);
 
         Filter.setBackground(new java.awt.Color(255, 255, 255));
         Filter.setToolTipText("");
@@ -230,7 +337,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField1.setBounds(600, 230, 410, 40);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(123, 117, 117));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("First Name");
@@ -254,7 +361,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField2.setBounds(130, 230, 400, 40);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(123, 117, 117));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Email");
@@ -283,7 +390,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField3.setBounds(130, 320, 880, 40);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(123, 117, 117));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Password");
@@ -307,11 +414,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField4.setBounds(130, 410, 880, 40);
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(123, 117, 117));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Retype Password");
-        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Filter.add(jLabel8);
         jLabel8.setBounds(153, 490, 130, 20);
 
@@ -319,7 +425,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         fielddecor4.setPreferredSize(new java.awt.Dimension(20, 20));
         fielddecor4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         Filter.add(fielddecor4);
-        fielddecor4.setBounds(150, 500, 134, 2);
+        fielddecor4.setBounds(145, 500, 134, 2);
 
         jTextField5.setBackground(new java.awt.Color(255, 255, 255));
         jTextField5.setForeground(new java.awt.Color(123, 117, 117));
@@ -349,104 +455,6 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
         Filter2.add(Filter);
         Filter.setBounds(480, 0, 1130, 880);
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("Excellence");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter2.add(jLabel6);
-        jLabel6.setBounds(60, 730, 240, 50);
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Conception");
-        jLabel7.setToolTipText("");
-        Filter2.add(jLabel7);
-        jLabel7.setBounds(170, 110, 250, 40);
-
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setText("Legacy");
-        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter2.add(jLabel9);
-        jLabel9.setBounds(60, 580, 280, 50);
-
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("of");
-        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter2.add(jLabel10);
-        jLabel10.setBounds(60, 630, 240, 50);
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setText("Pioneering");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter2.add(jLabel11);
-        jLabel11.setBounds(60, 680, 240, 50);
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("A");
-        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter2.add(jLabel12);
-        jLabel12.setBounds(60, 530, 50, 50);
-
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel13.setText("University of the");
-        jLabel13.setToolTipText("");
-        Filter2.add(jLabel13);
-        jLabel13.setBounds(170, 50, 250, 40);
-
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel14.setText("mmaculate");
-        jLabel14.setToolTipText("");
-        Filter2.add(jLabel14);
-        jLabel14.setBounds(196, 80, 190, 40);
-
-        logos.setForeground(new java.awt.Color(255, 255, 255));
-        logos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a.png"))); // NOI18N
-        logos.setText("Logo");
-        logos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        logos.setMaximumSize(new java.awt.Dimension(90, 90));
-        logos.setMinimumSize(new java.awt.Dimension(90, 90));
-        logos.setPreferredSize(new java.awt.Dimension(90, 90));
-        Filter2.add(logos);
-        logos.setBounds(60, 50, 100, 90);
-
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Mongolian Baiti", 0, 36)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel16.setText("I");
-        jLabel16.setToolTipText("");
-        Filter2.add(jLabel16);
-        jLabel16.setBounds(178, 80, 20, 40);
-
-        bg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vecteezy_beautiful-pink-color-gradient-background_7383249.jpg"))); // NOI18N
-        bg.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        Filter2.add(bg);
-        bg.setBounds(-90, 0, 690, 870);
 
         Login.add(Filter2);
         Filter2.setBounds(0, 0, 1540, 870);
@@ -717,8 +725,26 @@ public class EnrollmentApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    public int x = 0;
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        TimingTarget tt = new TimingTarget() {
+            @Override
+            public void timingEvent(float fraction) {
+                side.setLocation(x, 0);
+                
+                float sqr = fraction * fraction;
+                float ease = sqr / (2.0f * (sqr - fraction) + 1.0f);
+                System.out.println(sqr);
+                x += 5 * ease;
+            }
+        };
+
+        Animator move = new Animator(2000, tt);
+        move.setResolution(1);
+        if (!move.isRunning()) {
+            move.start();
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     static void ArcComps() {
@@ -790,6 +816,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private javax.swing.JPasswordField pass;
     private javax.swing.JLabel passlabel;
     private javax.swing.JRadioButton shop;
+    private javax.swing.JPanel side;
     private javax.swing.JLabel str;
     private javax.swing.JTable t;
     private javax.swing.JButton up;
