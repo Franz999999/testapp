@@ -733,10 +733,9 @@ public class EnrollmentApp extends javax.swing.JFrame {
             public void timingEvent(float fraction) {
                 side.setLocation(x, 0);
                 
-                float sqr = fraction * fraction;
-                float ease = sqr / (2.0f * (sqr - fraction) + 1.0f);
-                System.out.println(sqr);
-                x += 5 * ease;
+                float ein = fraction * fraction;
+                float eout = 1 - fraction * fraction;
+                x += 65 * ein * eout;
             }
         };
 
