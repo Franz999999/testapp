@@ -123,6 +123,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Login = new javax.swing.JPanel();
         Filter2 = new javax.swing.JPanel();
         side = new javax.swing.JPanel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -205,6 +206,8 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Filter2.setLayout(null);
 
         side.setLayout(null);
+        side.add(jXDatePicker1);
+        jXDatePicker1.setBounds(220, 280, 169, 24);
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Mongolian Baiti", 0, 48)); // NOI18N
@@ -733,14 +736,14 @@ public class EnrollmentApp extends javax.swing.JFrame {
             public void timingEvent(float fraction) {
                 side.setLocation(x, 0);
                 
-                float sqr = fraction * fraction;
-                float ease = sqr / (2.0f * (sqr - fraction) + 1.0f);
-                System.out.println(sqr);
-                x += 5 * ease;
+                float esin = fraction * fraction;
+                float esout = 1 - fraction * fraction;
+                x += 65 * esin * esout;
+                System.out.println(x);
             }
         };
 
-        Animator move = new Animator(2000, tt);
+        Animator move = new Animator(2020, tt);
         move.setResolution(1);
         if (!move.isRunning()) {
             move.start();
@@ -811,6 +814,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private javax.swing.JButton login1;
     private javax.swing.JLabel logos;
     private javax.swing.JPasswordField pass;
