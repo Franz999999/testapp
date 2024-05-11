@@ -55,12 +55,22 @@ public class EnrollmentApp extends javax.swing.JFrame {
     public static String code;
 
     public EnrollmentApp() {
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         ScaleImg(logos);
         Test.setVisible(false);
         SignUp.setVisible(false);
         Login.setVisible(false);
+        Menu1.setVisible(false);
+        Menu2.setVisible(false);
+        Menu3.setVisible(false);
+        Menu4.setVisible(false);
+        Menu5.setVisible(false);
+        Menu6.setVisible(false);
+        Menu7.setVisible(false);
+        Menu8.setVisible(false);
+        Menu9.setVisible(false);
+        Menu10.setVisible(false);
         jLabel1.setIcon(LoginSignup.Captcha());
         jFileChooser1.setVisible(false);
         System.out.println();
@@ -77,7 +87,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
             @Override
             public void timingEvent(float fraction) {
                 load.setValue(yo);
-                yo = (int) (fraction * 105);
+                yo = (int) (fraction * 100);
                 if (yo <= 100) {
                     loaded = true;
                 }
@@ -90,10 +100,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
                         EventQueue.invokeLater(new Runnable() {
                             @Override
                             public void run() {
-                                FlatAnimatedLafChange.showSnapshot();
-                                Loading.setVisible(false);
-                                Login.setVisible(true);
-                                FlatAnimatedLafChange.hideSnapshotWithAnimation();
+                                //FlatAnimatedLafChange.showSnapshot();
+                                //Loading.setVisible(false);
+                                //Login.setVisible(true);
+                                //FlatAnimatedLafChange.hideSnapshotWithAnimation();
                             }
                         });
                     } catch (InterruptedException ex) {
@@ -267,8 +277,6 @@ public class EnrollmentApp extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UIC EduGate");
         setMaximumSize(new java.awt.Dimension(1538, 866));
-        setMinimumSize(new java.awt.Dimension(1538, 866));
-        setPreferredSize(null);
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
             }
@@ -286,23 +294,21 @@ public class EnrollmentApp extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         Loading.setBackground(new java.awt.Color(255, 255, 255));
+        Loading.setForeground(new java.awt.Color(236, 236, 236));
+        Loading.setPreferredSize(new java.awt.Dimension(1540, 800));
         Loading.setLayout(null);
 
-        load.setBackground(new java.awt.Color(243, 243, 243));
+        load.setBackground(new java.awt.Color(224, 224, 224));
         load.setForeground(new java.awt.Color(255, 153, 153));
         load.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Loading.add(load);
         load.setBounds(150, 390, 1240, 40);
 
-        getContentPane().add(Loading);
-        Loading.setBounds(0, 0, 1540, 870);
-
         SignUp.setMaximumSize(new java.awt.Dimension(1536, 864));
         SignUp.setMinimumSize(new java.awt.Dimension(1536, 864));
-        SignUp.setPreferredSize(new java.awt.Dimension(1538, 866));
+        SignUp.setPreferredSize(new java.awt.Dimension(1538, 800));
         SignUp.setLayout(null);
 
         Filter3.setBackground(new java.awt.Color(255, 255, 255));
@@ -312,7 +318,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         side1.add(jPanel4);
-        jPanel4.setBounds(1059, 50, 1, 680);
+        jPanel4.setBounds(1059, 50, 1, 800);
 
         jPanel5.setOpaque(false);
         jPanel5.setLayout(null);
@@ -401,7 +407,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         logos1.setBounds(40, 50, 100, 90);
 
         side1.add(jPanel5);
-        jPanel5.setBounds(1060, 0, 500, 870);
+        jPanel5.setBounds(1060, 0, 500, 800);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -410,10 +416,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jPanel6.add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-790, 0, 2350, 870));
 
         side1.add(jPanel6);
-        jPanel6.setBounds(0, 0, 1560, 870);
+        jPanel6.setBounds(0, 0, 1560, 800);
 
         Filter3.add(side1);
-        side1.setBounds(-1060, 0, 1560, 870);
+        side1.setBounds(-1060, 0, 1560, 800);
 
         Filter1.setBackground(new java.awt.Color(255, 255, 255));
         Filter1.setForeground(new java.awt.Color(255, 102, 153));
@@ -588,13 +594,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel8.setBounds(130, 640, 180, 20);
 
         Filter3.add(Filter1);
-        Filter1.setBounds(500, 0, 1110, 870);
+        Filter1.setBounds(500, 0, 1110, 800);
 
         SignUp.add(Filter3);
-        Filter3.setBounds(0, 0, 1550, 870);
-
-        getContentPane().add(SignUp);
-        SignUp.setBounds(0, 0, 1538, 866);
+        Filter3.setBounds(0, 0, 1550, 800);
 
         Login.setMaximumSize(new java.awt.Dimension(1536, 864));
         Login.setMinimumSize(new java.awt.Dimension(1536, 864));
@@ -607,7 +610,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         side.add(jPanel3);
-        jPanel3.setBounds(1059, 50, 1, 680);
+        jPanel3.setBounds(1059, 50, 1, 800);
 
         jPanel2.setOpaque(false);
         jPanel2.setLayout(null);
@@ -696,7 +699,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         logos.setBounds(40, 50, 100, 90);
 
         side.add(jPanel2);
-        jPanel2.setBounds(1060, 0, 500, 870);
+        jPanel2.setBounds(1060, 0, 500, 800);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -705,10 +708,10 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-790, 0, 2350, 870));
 
         side.add(jPanel1);
-        jPanel1.setBounds(0, 0, 1560, 870);
+        jPanel1.setBounds(0, 0, 1560, 800);
 
         Filter2.add(side);
-        side.setBounds(-1060, 0, 1560, 870);
+        side.setBounds(-1060, 0, 1560, 800);
 
         Filter.setBackground(new java.awt.Color(255, 255, 255));
         Filter.setToolTipText("");
@@ -803,7 +806,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Filter.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 544, 166, 30));
 
         Filter2.add(Filter);
-        Filter.setBounds(500, 0, 1110, 870);
+        Filter.setBounds(500, 0, 1110, 800);
 
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
@@ -813,11 +816,8 @@ public class EnrollmentApp extends javax.swing.JFrame {
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Filter2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Filter2, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
-        getContentPane().add(Login);
-        Login.setBounds(0, 0, 1538, 866);
 
         Menu1.setBackground(new java.awt.Color(255, 255, 255));
         Menu1.setMinimumSize(new java.awt.Dimension(1540, 876));
@@ -830,65 +830,44 @@ public class EnrollmentApp extends javax.swing.JFrame {
         );
         Menu1Layout.setVerticalGroup(
             Menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 876, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-
-        getContentPane().add(Menu1);
-        Menu1.setBounds(0, 0, 1540, 870);
 
         Menu2.setBackground(new java.awt.Color(255, 255, 255));
         Menu2.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu2.setLayout(null);
-        getContentPane().add(Menu2);
-        Menu2.setBounds(0, 0, 1540, 870);
 
         Menu3.setBackground(new java.awt.Color(255, 255, 255));
         Menu3.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu3.setLayout(null);
-        getContentPane().add(Menu3);
-        Menu3.setBounds(0, 0, 1540, 870);
 
         Menu4.setBackground(new java.awt.Color(255, 255, 255));
         Menu4.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu4.setLayout(null);
-        getContentPane().add(Menu4);
-        Menu4.setBounds(0, 0, 1540, 870);
 
         Menu5.setBackground(new java.awt.Color(255, 255, 255));
         Menu5.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu5.setLayout(null);
-        getContentPane().add(Menu5);
-        Menu5.setBounds(0, 0, 1540, 870);
 
         Menu6.setBackground(new java.awt.Color(255, 255, 255));
         Menu6.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu6.setLayout(null);
-        getContentPane().add(Menu6);
-        Menu6.setBounds(0, 0, 1540, 870);
 
         Menu7.setBackground(new java.awt.Color(255, 255, 255));
         Menu7.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu7.setLayout(null);
-        getContentPane().add(Menu7);
-        Menu7.setBounds(0, 0, 1540, 870);
 
         Menu8.setBackground(new java.awt.Color(255, 255, 255));
         Menu8.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu8.setLayout(null);
-        getContentPane().add(Menu8);
-        Menu8.setBounds(0, 0, 1540, 870);
 
         Menu9.setBackground(new java.awt.Color(255, 255, 255));
         Menu9.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu9.setLayout(null);
-        getContentPane().add(Menu9);
-        Menu9.setBounds(0, 0, 1540, 870);
 
         Menu10.setBackground(new java.awt.Color(255, 255, 255));
         Menu10.setMinimumSize(new java.awt.Dimension(1540, 876));
         Menu10.setLayout(null);
-        getContentPane().add(Menu10);
-        Menu10.setBounds(0, 0, 1540, 870);
 
         Test.setMaximumSize(new java.awt.Dimension(1536, 864));
         Test.setMinimumSize(new java.awt.Dimension(1536, 864));
@@ -1034,8 +1013,42 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Test.add(login1);
         login1.setBounds(150, 560, 340, 30);
 
-        getContentPane().add(Test);
-        Test.setBounds(0, 0, 1536, 864);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu6, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu9, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu3, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Loading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu8, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu7, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu4, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu10, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu5, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu2, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu6, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Test, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu9, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu3, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Loading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu8, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu7, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu4, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu10, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu5, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu2, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
         setLocationRelativeTo(null);
