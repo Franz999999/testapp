@@ -44,7 +44,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.plaf.basic.BasicSliderUI;
 import javax.swing.table.DefaultTableModel;
 
-public class EnrollmentApp extends javax.swing.JFrame {
+public class EnrollmentAppOld extends javax.swing.JFrame {
 
     private static final String EMAIL_FROM = "helperbot999999999@gmail.com";
     private static final String EMAIL_TO = "franzilator9@gmail.com";
@@ -54,7 +54,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     DefaultTableModel tmodel;
     public static String code;
 
-    public EnrollmentApp() {
+    public EnrollmentAppOld() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         ScaleImg(logos);
@@ -107,7 +107,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
                             }
                         });
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(EnrollmentAppOld.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 });
                 t.start();
@@ -138,11 +138,11 @@ public class EnrollmentApp extends javax.swing.JFrame {
             emlabel.setFont(font);
 
         } catch (MalformedURLException ex) {
-            Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EnrollmentAppOld.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FontFormatException ex) {
-            Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EnrollmentAppOld.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(EnrollmentApp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EnrollmentAppOld.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -1071,7 +1071,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
             Utilities.Notifications();
 
         } catch (AWTException ex) {
-            Logger.getLogger(EnrollmentApp.class
+            Logger.getLogger(EnrollmentAppOld.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
@@ -1256,7 +1256,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         FlatLightLaf.setup();
 
         java.awt.EventQueue.invokeLater(() -> {
-            new EnrollmentApp().setVisible(true);
+            new EnrollmentAppOld().setVisible(true);
         });
     }
 

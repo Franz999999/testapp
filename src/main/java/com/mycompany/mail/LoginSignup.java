@@ -49,7 +49,7 @@ public class LoginSignup {
         GeneratedCaptcha gencaptcha = captcha.generate();
         BufferedImage capImg = gencaptcha.getImage();
         ImageIcon imgicon = new ImageIcon(capImg);
-        EnrollmentApp.code = gencaptcha.getCode();
+        EnrollmentAppOld.code = gencaptcha.getCode();
         return imgicon;
     }
 }
