@@ -55,7 +55,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     public static String code;
 
     public EnrollmentApp() {
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
         ScaleImg(logos);
         Test.setVisible(false);
@@ -63,6 +63,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Login.setVisible(false);
         jLabel1.setIcon(LoginSignup.Captcha());
         jFileChooser1.setVisible(false);
+        System.out.println();
         ClockStart();
         LoadScreen();
         PassStrength();
@@ -91,7 +92,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
                             public void run() {
                                 FlatAnimatedLafChange.showSnapshot();
                                 Loading.setVisible(false);
-                                SignUp.setVisible(true);
+                                Login.setVisible(true);
                                 FlatAnimatedLafChange.hideSnapshotWithAnimation();
                             }
                         });
@@ -221,6 +222,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
         Filter = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         fielddecor2 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -230,6 +232,16 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        Menu1 = new javax.swing.JPanel();
+        Menu2 = new javax.swing.JPanel();
+        Menu3 = new javax.swing.JPanel();
+        Menu4 = new javax.swing.JPanel();
+        Menu5 = new javax.swing.JPanel();
+        Menu6 = new javax.swing.JPanel();
+        Menu7 = new javax.swing.JPanel();
+        Menu8 = new javax.swing.JPanel();
+        Menu9 = new javax.swing.JPanel();
+        Menu10 = new javax.swing.JPanel();
         Test = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -254,9 +266,9 @@ public class EnrollmentApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UIC EduGate");
-        setMaximumSize(new java.awt.Dimension(1536, 700));
-        setMinimumSize(new java.awt.Dimension(1536, 700));
-        setPreferredSize(new java.awt.Dimension(1536, 700));
+        setMaximumSize(new java.awt.Dimension(1538, 866));
+        setMinimumSize(new java.awt.Dimension(1538, 866));
+        setPreferredSize(null);
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
             }
@@ -283,7 +295,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         load.setForeground(new java.awt.Color(255, 153, 153));
         load.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Loading.add(load);
-        load.setBounds(470, 440, 700, 40);
+        load.setBounds(150, 390, 1240, 40);
 
         getContentPane().add(Loading);
         Loading.setBounds(0, 0, 1540, 870);
@@ -508,7 +520,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField9.setMargin(new java.awt.Insets(2, 12, 2, 6));
         jTextField9.setSelectionColor(new java.awt.Color(123, 117, 117));
         Filter1.add(jTextField9);
-        jTextField9.setBounds(130, 410, 820, 40);
+        jTextField9.setBounds(130, 400, 820, 40);
 
         jLabel28.setBackground(new java.awt.Color(255, 255, 255));
         jLabel28.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
@@ -556,7 +568,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel29.setText("Create Account");
         Filter1.add(jLabel29);
-        jLabel29.setBounds(0, 90, 1110, 60);
+        jLabel29.setBounds(0, 90, 1040, 60);
 
         jLabel3.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 153));
@@ -587,7 +599,6 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Login.setMaximumSize(new java.awt.Dimension(1536, 864));
         Login.setMinimumSize(new java.awt.Dimension(1536, 864));
         Login.setPreferredSize(new java.awt.Dimension(1538, 866));
-        Login.setLayout(null);
 
         Filter2.setBackground(new java.awt.Color(255, 255, 255));
         Filter2.setLayout(null);
@@ -702,7 +713,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         Filter.setBackground(new java.awt.Color(255, 255, 255));
         Filter.setToolTipText("");
         Filter.setEnabled(false);
-        Filter.setLayout(null);
+        Filter.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
@@ -710,14 +721,16 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Email");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter.add(jLabel4);
-        jLabel4.setBounds(150, 320, 40, 20);
+        Filter.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 314, 40, 20));
+
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-eye-30.png"))); // NOI18N
+        Filter.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 414, 50, 40));
 
         fielddecor2.setBackground(new java.awt.Color(255, 255, 255));
         fielddecor2.setPreferredSize(new java.awt.Dimension(20, 20));
         fielddecor2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Filter.add(fielddecor2);
-        fielddecor2.setBounds(140, 330, 44, 2);
+        Filter.add(fielddecor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 324, 44, 2));
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
         jTextField3.setForeground(new java.awt.Color(123, 117, 117));
@@ -730,8 +743,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        Filter.add(jTextField3);
-        jTextField3.setBounds(130, 330, 820, 40);
+        Filter.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 324, 820, 40));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
@@ -739,14 +751,12 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Password");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter.add(jLabel5);
-        jLabel5.setBounds(150, 410, 80, 20);
+        Filter.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 404, 80, 20));
 
         fielddecor3.setBackground(new java.awt.Color(255, 255, 255));
         fielddecor3.setPreferredSize(new java.awt.Dimension(20, 20));
         fielddecor3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Filter.add(fielddecor3);
-        fielddecor3.setBounds(140, 420, 78, 2);
+        Filter.add(fielddecor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 414, 78, 2));
 
         jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.setForeground(new java.awt.Color(123, 117, 117));
@@ -754,8 +764,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
         jTextField4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextField4.setMargin(new java.awt.Insets(2, 12, 2, 6));
         jTextField4.setSelectionColor(new java.awt.Color(123, 117, 117));
-        Filter.add(jTextField4);
-        jTextField4.setBounds(130, 420, 820, 40);
+        Filter.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 414, 820, 40));
 
         log.setBackground(new java.awt.Color(253, 193, 200));
         log.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
@@ -768,15 +777,13 @@ public class EnrollmentApp extends javax.swing.JFrame {
                 logActionPerformed(evt);
             }
         });
-        Filter.add(log);
-        log.setBounds(130, 500, 820, 40);
+        Filter.add(log, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 494, 820, 40));
 
         jLabel14.setFont(new java.awt.Font("Inter", 1, 48)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Login to Account");
-        Filter.add(jLabel14);
-        jLabel14.setBounds(0, 90, 1040, 60);
+        Filter.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1040, 60));
 
         jLabel2.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 153));
@@ -787,24 +794,101 @@ public class EnrollmentApp extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        Filter.add(jLabel2);
-        jLabel2.setBounds(300, 550, 130, 20);
+        Filter.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 544, 134, 20));
 
         jLabel30.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(51, 51, 51));
         jLabel30.setText("Don't have an account?");
         jLabel30.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Filter.add(jLabel30);
-        jLabel30.setBounds(130, 550, 170, 30);
+        Filter.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 544, 166, 30));
 
         Filter2.add(Filter);
         Filter.setBounds(500, 0, 1110, 870);
 
-        Login.add(Filter2);
-        Filter2.setBounds(0, 0, 1550, 870);
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Filter2, javax.swing.GroupLayout.PREFERRED_SIZE, 1550, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Filter2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         getContentPane().add(Login);
         Login.setBounds(0, 0, 1538, 866);
+
+        Menu1.setBackground(new java.awt.Color(255, 255, 255));
+        Menu1.setMinimumSize(new java.awt.Dimension(1540, 876));
+
+        javax.swing.GroupLayout Menu1Layout = new javax.swing.GroupLayout(Menu1);
+        Menu1.setLayout(Menu1Layout);
+        Menu1Layout.setHorizontalGroup(
+            Menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1540, Short.MAX_VALUE)
+        );
+        Menu1Layout.setVerticalGroup(
+            Menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 876, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Menu1);
+        Menu1.setBounds(0, 0, 1540, 870);
+
+        Menu2.setBackground(new java.awt.Color(255, 255, 255));
+        Menu2.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu2.setLayout(null);
+        getContentPane().add(Menu2);
+        Menu2.setBounds(0, 0, 1540, 870);
+
+        Menu3.setBackground(new java.awt.Color(255, 255, 255));
+        Menu3.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu3.setLayout(null);
+        getContentPane().add(Menu3);
+        Menu3.setBounds(0, 0, 1540, 870);
+
+        Menu4.setBackground(new java.awt.Color(255, 255, 255));
+        Menu4.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu4.setLayout(null);
+        getContentPane().add(Menu4);
+        Menu4.setBounds(0, 0, 1540, 870);
+
+        Menu5.setBackground(new java.awt.Color(255, 255, 255));
+        Menu5.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu5.setLayout(null);
+        getContentPane().add(Menu5);
+        Menu5.setBounds(0, 0, 1540, 870);
+
+        Menu6.setBackground(new java.awt.Color(255, 255, 255));
+        Menu6.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu6.setLayout(null);
+        getContentPane().add(Menu6);
+        Menu6.setBounds(0, 0, 1540, 870);
+
+        Menu7.setBackground(new java.awt.Color(255, 255, 255));
+        Menu7.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu7.setLayout(null);
+        getContentPane().add(Menu7);
+        Menu7.setBounds(0, 0, 1540, 870);
+
+        Menu8.setBackground(new java.awt.Color(255, 255, 255));
+        Menu8.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu8.setLayout(null);
+        getContentPane().add(Menu8);
+        Menu8.setBounds(0, 0, 1540, 870);
+
+        Menu9.setBackground(new java.awt.Color(255, 255, 255));
+        Menu9.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu9.setLayout(null);
+        getContentPane().add(Menu9);
+        Menu9.setBounds(0, 0, 1540, 870);
+
+        Menu10.setBackground(new java.awt.Color(255, 255, 255));
+        Menu10.setMinimumSize(new java.awt.Dimension(1540, 876));
+        Menu10.setLayout(null);
+        getContentPane().add(Menu10);
+        Menu10.setBounds(0, 0, 1540, 870);
 
         Test.setMaximumSize(new java.awt.Dimension(1536, 864));
         Test.setMinimumSize(new java.awt.Dimension(1536, 864));
@@ -1170,6 +1254,16 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private javax.swing.JPanel Filter3;
     private javax.swing.JPanel Loading;
     private javax.swing.JPanel Login;
+    private javax.swing.JPanel Menu1;
+    private javax.swing.JPanel Menu10;
+    private javax.swing.JPanel Menu2;
+    private javax.swing.JPanel Menu3;
+    private javax.swing.JPanel Menu4;
+    private javax.swing.JPanel Menu5;
+    private javax.swing.JPanel Menu6;
+    private javax.swing.JPanel Menu7;
+    private javax.swing.JPanel Menu8;
+    private javax.swing.JPanel Menu9;
     private javax.swing.JPanel SignUp;
     private javax.swing.JPanel Test;
     private javax.swing.JLabel bg;
@@ -1216,6 +1310,7 @@ public class EnrollmentApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
