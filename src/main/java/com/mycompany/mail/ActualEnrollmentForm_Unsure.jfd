@@ -1,0 +1,44 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "20.0.2" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "fill,insets 0,hidemode 3"
+			"$columnConstraints": "[0,fill][fill]"
+			"$rowConstraints": "[][][]"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "filly,insets 0,hidemode 3"
+				"$columnConstraints": "[fill][fill]"
+				"$rowConstraints": "[][][]"
+			} ) {
+				name: "panel1"
+				"background": new java.awt.Color( 255, 102, 153, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "UIC"
+					"font": new java.awt.Font( "Mongolian Baiti", 1, 36 )
+					"horizontalAlignment": 2
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0 2 1,aligny top,growy 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "EduGate"
+					"font": new java.awt.Font( "Mongolian Baiti", 1, 36 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1 2 1,aligny top,growy 0"
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0 1 3,growy"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

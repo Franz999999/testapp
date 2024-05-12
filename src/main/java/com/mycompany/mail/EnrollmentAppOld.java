@@ -87,7 +87,7 @@ public class EnrollmentAppOld extends javax.swing.JFrame {
             @Override
             public void timingEvent(float fraction) {
                 load.setValue(yo);
-                yo = (int) (fraction * 100);
+                yo = (int) (fraction * 105);
                 if (yo <= 100) {
                     loaded = true;
                 }
@@ -100,10 +100,10 @@ public class EnrollmentAppOld extends javax.swing.JFrame {
                         EventQueue.invokeLater(new Runnable() {
                             @Override
                             public void run() {
-                                //FlatAnimatedLafChange.showSnapshot();
-                                //Loading.setVisible(false);
-                                //Login.setVisible(true);
-                                //FlatAnimatedLafChange.hideSnapshotWithAnimation();
+                                FlatAnimatedLafChange.showSnapshot();
+                                Loading.setVisible(false);
+                                Login.setVisible(true);
+                                FlatAnimatedLafChange.hideSnapshotWithAnimation();
                             }
                         });
                     } catch (InterruptedException ex) {
@@ -192,6 +192,8 @@ public class EnrollmentAppOld extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         logos1 = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel6 = new javax.swing.JPanel();
         bg1 = new javax.swing.JLabel();
         Filter1 = new javax.swing.JPanel();
@@ -405,6 +407,10 @@ public class EnrollmentAppOld extends javax.swing.JFrame {
         logos1.setPreferredSize(new java.awt.Dimension(90, 90));
         jPanel5.add(logos1);
         logos1.setBounds(40, 50, 100, 90);
+        jPanel5.add(filler1);
+        filler1.setBounds(430, 120, 0, 0);
+        jPanel5.add(filler2);
+        filler2.setBounds(0, 130, 500, 10);
 
         side1.add(jPanel5);
         jPanel5.setBounds(1060, 0, 500, 800);
@@ -1295,6 +1301,8 @@ public class EnrollmentAppOld extends javax.swing.JFrame {
     private javax.swing.JPanel fielddecor7;
     private javax.swing.JPanel fielddecor8;
     private javax.swing.JPanel fielddecor9;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
