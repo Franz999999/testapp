@@ -99,6 +99,7 @@ public class EnrollmentAppNew extends javax.swing.JFrame {
         ScaleImg(jLabel45);
         ScaleImg(jLabel47);
         ScaleImg(jLabel90);
+        //dsf
         ScaleImg(jLabel91);
         ScaleImg(jLabel115);
         ScaleImg(jLabel116);
